@@ -47,17 +47,17 @@ function wp_dns() {
 
   foreach ( $alldns as $dns_records ) {
     if ($dns_records['type'] == 'A') {
-      $a[] = $dns_records['ip']);
+      $a[] = $dns_records['ip'];
     }
     elseif ($dns_records['type'] == 'NS') {
-      $ns[] = $dns_records['target']);
+      $ns[] = $dns_records['target'];
     }
     elseif ($dns_records['type'] == 'MX') {
-      $mx[] = $dns_records['target']);
+      $mx[] = $dns_records['target'];
     }
     elseif ($dns_records['type'] == 'TXT') {
       foreach ( $dns_records['entries'] as $txt_entries) {
-        $txt[] = $txt_entries);
+        $txt[] = $txt_entries;
       }
     }
   }
