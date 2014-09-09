@@ -47,7 +47,7 @@ function wp_dns() {
 
   foreach ( $alldns as $dns_records ) {
     if ($dns_records['type'] == 'A') {
-      $a .= $dns_records["ip"]);
+      $a .= $dns_records['ip']);
     }
     elseif ($dns_records['type'] == 'NS') {
       $ns .= $dns_records['target']);
