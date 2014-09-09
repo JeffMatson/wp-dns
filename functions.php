@@ -68,7 +68,7 @@ function wp_dns() {
   // Print Name Servers
   echo '<h1>Name Servers</h1>';
   foreach ( $ns as $get_ns ) {
-    echo nl2br( $get_ns . '\n' );
+    echo $get_ns PHP_EOL;
   }
 
   // Print A Records
@@ -101,7 +101,7 @@ function wp_dns() {
 function wp_whois() {
   $domain = $_SERVER['SERVER_NAME'];
   require_once( 'whoisClass.php' );
-  $whois=new Whois;
+  $whois = new Whois;
   echo '<h1>WHOIS Info</h1>';
   echo '<pre>';
   echo $whois->whoislookup( $domain );
