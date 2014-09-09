@@ -68,7 +68,7 @@ function wp_dns() {
   // Print Name Servers
   echo '<h1>Name Servers</h1>';
   foreach ( $ns as $get_ns ) {
-    echo $get_ns PHP_EOL;
+    echo $get_ns, PHP_EOL;
   }
 
   // Print A Records
