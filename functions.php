@@ -72,7 +72,7 @@ function wp_dns() {
   }
 
   // Print A Records
-  echo "<h1>A Records</h1>";
+  echo '<h1>A Records</h1>';
   foreach ( $a as $get_a ) {
     echo $get_a . ' with reverse lookup ' . gethostbyaddr( $get_a ), PHP_EOL;
   }
