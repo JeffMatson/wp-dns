@@ -40,7 +40,7 @@ function wp_dns() {
   $alldns = dns_get_record ( $domain, DNS_ALL, $authns );
 
   // Create Arrays of DNS Records
-  $n    = array();
+  $ns   = array();
   $mx   = array();
   $a    = array();
   $txt  = array();
@@ -61,9 +61,7 @@ function wp_dns() {
       }
     }
   }
-  echo '<pre>'
-  print_r( $alldns );
-  echo '</pre>'
+
   // Print Domain
   echo '<h1>Domain</h1>' . $domain . '<br />';
 
@@ -76,19 +74,19 @@ function wp_dns() {
   // Print A Records
   echo "<h1>A Records</h1>";
   foreach ( $a as $get_a ) {
-    echo nl2br( $get_a . ' with reverse lookup ' . gethostbyaddr( $get_a ) . '\n' );
+    echo $get_a . ' with reverse lookup ' . gethostbyaddr( $get_a ), PHP_EOL;
   }
 
   // Print MX Records
   echo '<h1>MX Records</h1>';
   foreach ( $mx as $get_mx ) {
-    echo nl2br( $get_mx . ' with IP ' . gethostbyname( $get_mx ) . ' and reverse lookup ' . gethostbyaddr( gethostbyname( $get_mx ) ) . '\n' );
+    echo $get_mx . ' with IP ' . gethostbyname( $get_mx ) . ' and reverse lookup ' . gethostbyaddr( gethostbyname( $get_mx ) ), PHP_EOL;
   }
 
   // Print TXT Records
   echo '<h1>TXT Records</h1>';
   foreach ( $txt as $get_txt ) {
-    echo nl2br( $get_txt . '\n' );
+    echo $get_txt, PHP_EOL;
   }
 
   wp_whois();
