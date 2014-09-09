@@ -61,7 +61,7 @@ function wp_dns() {
       }
     }
   }
-
+  print_r( $alldns );
   // Print Domain
   echo '<h1>Domain</h1>' . $domain . '<br />';
 
